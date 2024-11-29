@@ -49,11 +49,15 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         editor.apply()
 
         ZIMKit.connectUser(userId, userName, avatarUrl) { error: ZIMError ->
+
+            //If connectUser failed, show error
             if (error.code != ZIMErrorCode.SUCCESS) {
                 val message = error.message + ": " + error.code.value()
                 Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
                 return@connectUser
             }
+
+            //If connectUser successful, go to ConversationActivity for showing list of users
             val intent = Intent(this, ConversationActivity::class.java)
             startActivity(intent)
         }

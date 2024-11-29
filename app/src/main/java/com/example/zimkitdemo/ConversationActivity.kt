@@ -135,6 +135,7 @@ class ConversationActivity : AppCompatActivity() {
     }
 
     private fun startChat(conversationID: String, type: ZIMKitConversationType) {
+        //this will open the chat activity
         ZIMKitRouter.toMessageActivity(this, conversationID, type)
     }
 

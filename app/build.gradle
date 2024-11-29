@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+
+    //secrets gradle plugin step2
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -19,6 +22,9 @@ android {
 
     buildFeatures {
         dataBinding true
+
+        //for secrets gradle plugin
+        buildConfig true
     }
 
     buildTypes {
@@ -47,6 +53,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation 'com.github.ZEGOCLOUD:zego_inapp_chat_uikit_android:+'
-    // uncomment it if you want to use callkit plugin
-  //  implementation 'com.github.ZEGOCLOUD:zego_uikit_prebuilt_call_android:+'
+
 }
